@@ -2,19 +2,21 @@
 
 [![Postman Collection](https://github.com/alisher-sdet/backend-postman-demo/actions/workflows/ci_postman.yml/badge.svg)](https://github.com/alisher-sdet/backend-postman-demo/actions/workflows/ci_postman.yml)
 
-> **Происхождение проекта.** Учебный проект. [Выполнен по курсу «название» (Udemy, автор) / Создан с помощью ИИ-ассистента.]
-> **Что сделал я:** [составил коллекцию, написал проверки, настроил запуск в GitHub Actions, исправлял падения ...].
-> **Чего здесь нет:** [негативных сценариев / схем ответов / переменных окружения / HTML-отчёта ...].
-
 ## Описание
 
-Коллекция Postman, которая запускается через Newman в GitHub Actions при каждом `push`. Результаты запусков: [вкладка Actions](https://github.com/alisher-sdet/backend-postman-demo/actions/workflows/ci_postman.yml).
+Минимальная коллекция Postman, которая запускается через Newman в GitHub Actions при каждом `push`. Результаты запусков: [вкладка Actions](https://github.com/alisher-sdet/backend-postman-demo/actions/workflows/ci_postman.yml).
 
 ## Что проверяют тесты
 
-- Тестируемый API: [название и адрес]
-- Запросов в коллекции: [N], проверок (`pm.test`): [M]
-- Что проверяется: [статус-коды, поля тела ответа, заголовки ...]
+- **Тестируемый API:** [JSONPlaceholder](https://jsonplaceholder.typicode.com) — бесплатный тестовый REST API, без авторизации. Он имитирует запись данных: POST возвращает ответ, но ничего не сохраняет, поэтому тесты проверяют контракт ответа, а не состояние данных.
+- **Запросов в коллекции:** 2, проверок (`pm.test`): 4.
+
+| Запрос | Что проверяется |
+| --- | --- |
+| `GET /posts` | статус 200; тело ответа — массив |
+| `POST /posts` (тело: `title`, `body`, `userId`) | статус 201; в ответе есть поле `id` |
+
+**Чего здесь нет:** проверки значений полей и схемы ответа, запросов `PUT`/`PATCH`/`DELETE`, получения записи по id, негативных сценариев (несуществующий id, пустое тело), переменных окружения, проверки времени ответа.
 
 ## Запуск локально
 
