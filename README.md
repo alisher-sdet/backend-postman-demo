@@ -2,6 +2,10 @@
 
 [![Postman Collection](https://github.com/alisher-sdet/backend-postman-demo/actions/workflows/ci_postman.yml/badge.svg)](https://github.com/alisher-sdet/backend-postman-demo/actions/workflows/ci_postman.yml)
 
+> **Происхождение проекта.** Учебный проект. При работе использовался ИИ-ассистент.
+> **Что сделал я:** составил коллекцию, настроил запуск через Newman в GitHub Actions.
+> **Чего здесь нет:** см. раздел ниже.
+
 ## Описание
 
 Минимальная коллекция Postman, которая запускается через Newman в GitHub Actions при каждом `push`. Результаты запусков: [вкладка Actions](https://github.com/alisher-sdet/backend-postman-demo/actions/workflows/ci_postman.yml).
